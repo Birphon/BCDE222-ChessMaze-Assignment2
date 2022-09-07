@@ -28,11 +28,11 @@ namespace LevelDesigner
             int actualWidth = actualLevel[0].Length;
             int actualHeight = actualLevel.Length;
 
-            CreateLevel(0,0);
+            CreateLevel(3,3);
             AddBishop(0,0);
-            AddEmpty(0,0);
-            AddKing(0,0);
-            AddKnight(0,0);
+            AddEmpty(0,1);
+            AddKing(0,2);
+            AddKnight(1,0);
         }
 
         public void AddBishop(int gridX, int gridY)                                             //Feature 2 Add Bishop
@@ -183,7 +183,7 @@ namespace LevelDesigner
                 validLevel = false;
                 throw new Exception("Incorrect Level Size! Too Small");
             }
-            else if (_height == 69 && _width == 69)
+            else if (_height > 10 && _width > 10)
             {
                 validLevel = false;
                 throw new Exception("Incorrect Level Size! Too Large");

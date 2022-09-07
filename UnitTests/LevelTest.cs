@@ -261,10 +261,8 @@ namespace UnitTests
         [TestMethod]
         public void CheckValid_ExpectedFalse()                              //F15 test 2
         {
-            levelDesigner.CreateLevel(10, 10);
-            Boolean actualResult = levelDesigner.CheckValid();
-            Boolean expectedResult = false;
-            Assert.AreEqual(expectedResult, actualResult);
+            levelDesigner.CreateLevel(70, 70);
+            Assert.ThrowsException<System.Exception>(() => levelDesigner.CheckValid());
         }
 
         [TestMethod]
