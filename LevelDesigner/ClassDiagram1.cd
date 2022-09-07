@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LevelDesigner.Level" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AVAAAAQoBKGBgAhgAAABAQAIAZgBAAgBEABAAEAAAQA=</HashCode>
+      <FileName>Level.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="LevelDesigner.ILevel">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAAAAIACEAgABgAAAAAAAIAAABAAgAEAAAAEAAQQA=</HashCode>
+      <FileName>ILevel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LevelDesigner.IFileable">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAABAAAAAAAA=</HashCode>
+      <FileName>IFileable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LevelDesigner.IFiler">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IFiler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="LevelDesigner.Part">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAEgAAAAAUIAAAQAAAQAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>Part.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
