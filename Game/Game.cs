@@ -82,6 +82,17 @@ namespace Game
             return activePart;
         }
 
+        protected string getActivePartString()
+        {
+            int currentActivePart = (int)activePart;
+            return currentActivePart.ToString();
+        }
+
+        protected Part loadActivePart()
+        {
+            return (Part)Int32.Parse(getActivePartString());
+        }
+
         public void Undo()
         {
             moveCount--;
@@ -100,27 +111,49 @@ namespace Game
             {
                 Undo();
             }
-        }        
+        }
+
+        public string filePath()
+        {
+            string filePath = @"C:\temp\ChessMaze\saves\savegame.txt";
+            return filePath;
+        }
 
         public void SaveMe()
-        {
-            string applicationPath = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
-            string saveFilePath = Path.Combine(applicationPath, "Temp.txt");
-            using var writer = new StreamWriter(saveFilePath, append: false);
-            writer.WriteLine(DateTime.Now.ToString());
-            writer.Close();
-
-            string[] lines = File.ReadAllLines(saveFilePath);
-            if (DateTime.TryParse(lines.ElementAt(0), out DateTime dateTime))
+        {            
+            try
             {
-                Console.WriteLine($"Saved: {dateTime}");
-                Console.WriteLine($"Current: {DateTime.Now}");
+                using (StreamWriter sw = new StreamWriter(filePath()))
+                {
+                    sw.WriteLine(getActivePartString(), playerX, playerY);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
             }
         }
 
         public void Load(string newLevel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (StreamReader sr = new StreamReader(filePath()))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        newLevel = line;
+                        loadActivePart(); // Dont think this works here
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
         }
 
         protected void recordMyMoves()
