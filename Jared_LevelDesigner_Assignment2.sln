@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32602.291
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{C720AEF4-75E3-4591-AAAA-BC5716801731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelDesigner", "LevelDesigner\LevelDesigner.csproj", "{062D6081-6430-4EAE-9980-1A60AB59BDB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelDesigner", "LevelDesigner\LevelDesigner.csproj", "{062D6081-6430-4EAE-9980-1A60AB59BDB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{361435DD-01B9-4CB3-832C-80AF27070370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{062D6081-6430-4EAE-9980-1A60AB59BDB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{062D6081-6430-4EAE-9980-1A60AB59BDB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{062D6081-6430-4EAE-9980-1A60AB59BDB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361435DD-01B9-4CB3-832C-80AF27070370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361435DD-01B9-4CB3-832C-80AF27070370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361435DD-01B9-4CB3-832C-80AF27070370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361435DD-01B9-4CB3-832C-80AF27070370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
