@@ -1,9 +1,8 @@
 using System;
 using System.IO;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace Game
 {
@@ -119,13 +118,28 @@ namespace Game
             return filePath;
         }
 
+        public string fileName(){
+            string saveName = "";
+            System.Console.WriteLine("What do you want to call this file? ");
+            saveName = System.Console.ReadLine();
+            return saveName;
+        }
+
         public void SaveMe()
-        {            
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(filePath()))
+        {
+            try{
+                // Check if file already exists. If yes, delete it's so it can be overridden.     
+                if (File.Exists(fileName()))    
                 {
-                    sw.WriteLine(getActivePartString(), playerX, playerY);
+                    // Needs to be changed so it makes the current fileName() have the .old extention added to the end - ensures backup of GameData    
+                    File.Delete(fileName());    
+                }
+                // Broken poggies
+                using (FileStream fs = File.Create(filePath())){
+                    Byte[] title = new UTF8Encoding(true).GetBytes(fileName());
+                    fs.Write(title, 0, title.Length);
+                    Byte[] gameData = new UTF8Encoding(true).GetBytes(getActivePart(), getPlayerX(), getPlayerY());  
+                    fs.Write(gameData, 0, gameData.Length);
                 }
             }
             catch (Exception e)
@@ -139,14 +153,16 @@ namespace Game
         {
             try
             {
-                using (StreamReader sr = new StreamReader(filePath()))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        newLevel = line;
-                        loadActivePart(); // Dont think this works here
+                using (StreamReader sr = File.OpenText(filePath()))
+                {    
+                    string s = "";    
+                    while ((s = sr.ReadLine()) != null)    
+                    {    
+                        Console.WriteLine(s);    
                     }
+                    loadActivePart();
+                    playerX = getPlayerX();
+                    playerY = getPlayerY(); 
                 }
             }
             catch (Exception e)
