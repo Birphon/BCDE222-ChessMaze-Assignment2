@@ -9,7 +9,7 @@ namespace Game
         public static void Main(string[] args)
         {
             Game newGame = new Game();
-            newGame.SaveMe();
+            newGame.Start();
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
